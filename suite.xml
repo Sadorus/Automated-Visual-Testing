@@ -1,25 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<suite name="test-suite" company="company" project="project">
-    <test name="first-test" useProxy="rest">
+<suite name="mateusz-bloch-website" company="company" project="mateusz-bloch-visual-testing"
+    domain="http://mateuszbloch.pl">
+
+    <test name="FullPage" useProxy="rest">
         <collect>
             <open/>
-            <resolution width="800" height="600" />
-            <sleep duration="1500"/>
-            <screen/>
-            <source/>
-            <status-codes/>
-            <js-errors/>
+            
+            <resolution width="1920"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Large"/>
+
+            <resolution width="1280"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Small" />
+
+            <resolution width="768"/>
+            <sleep duration="3000"/>
+            <screen name="Tablet" />
+
+            <resolution width="320"/>
+            <sleep duration="3000"/>
+            <screen name="Small Mobile" />
+
         </collect>
-        <compare xmlns="http://www.cognifide.com/aet/compare/">
-            <screen comparator="layout"/>
-            <source comparator="w3c-html5"/>
-            <status-codes filterRange="400,600"/>
-            <js-errors>
-                <js-errors-filter source="http://w.iplsc.com/external/jquery/jquery-1.8.3.js" line="2" />
-            </js-errors>
+        <compare>
+            <screen comparator="layout" percentageThreshold="1.0"/>
         </compare>
         <urls>
-            <url href="https://en.wikipedia.org/wiki/Main_Page"/>
+            <url href="/" name="FullPage"/>
+        </urls>
+    </test>
+    <test name="ContactForm" useProxy="rest">
+        <collect>
+            <open/>
+            
+            <resolution width="1920"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Large" css="#contact" />
+
+            <resolution width="1280"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Small" css="#contact" />
+
+            <resolution width="768"/>
+            <sleep duration="3000"/>
+            <screen name="Tablet" css="#contact" />
+
+            <resolution width="320"/>
+            <sleep duration="3000"/>
+            <screen name="Small Mobile" css="#contact" />
+
+        </collect>
+        <compare>
+            <screen comparator="layout" percentageThreshold="1.0"/>
+        </compare>
+        <urls>
+            <url href="/" name="ContactSection"/>
+        </urls>
+    </test>
+    <test name="ProjectsSection" useProxy="rest">
+        <collect>
+            <open/>
+            
+            <resolution width="1920"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Large" css="#projects" />
+
+            <resolution width="1280"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Small" css="#projects" />
+
+            <resolution width="768"/>
+            <sleep duration="3000"/>
+            <screen name="Tablet" css="#projects" />
+
+            <resolution width="320"/>
+            <sleep duration="3000"/>
+            <screen name="Small Mobile" css="#projects" />
+
+        </collect>
+        <compare>
+            <screen comparator="layout" percentageThreshold="1.0"/>
+        </compare>
+        <urls>
+            <url href="/" name="ProjectsSection"/>
+        </urls>
+    </test>
+    <test name="IntroSection" useProxy="rest">
+        <collect>
+            <open/>
+            
+            <resolution width="1920"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Large" css="#intro" />
+
+            <resolution width="1280"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Small" css="#intro" />
+
+            <resolution width="768"/>
+            <sleep duration="3000"/>
+            <screen name="Tablet" css="#intro" />
+
+            <resolution width="320"/>
+            <sleep duration="3000"/>
+            <screen name="Small Mobile" css="#intro" />
+
+        </collect>
+        <compare>
+            <screen comparator="layout" percentageThreshold="1.0"/>
+        </compare>
+        <urls>
+            <url href="/" name="IntroSection"/>
+        </urls>
+    </test>
+    <test name="AboutSection" useProxy="rest">
+        <collect>
+            <open/>
+            
+            <resolution width="1920"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Large" css="#about" />
+
+            <resolution width="1280"/>
+            <sleep duration="3000"/>
+            <screen name="Desktop Small" css="#about" />
+
+            <resolution width="768"/>
+            <sleep duration="3000"/>
+            <screen name="Tablet" css="#about" />
+
+            <resolution width="320"/>
+            <sleep duration="3000"/>
+            <screen name="Small Mobile" css="#about" />
+
+        </collect>
+        <compare>
+            <screen comparator="layout" percentageThreshold="1.0"/>
+        </compare>
+        <urls>
+            <url href="/" name="AboutSection"/>
         </urls>
     </test>
 </suite>
